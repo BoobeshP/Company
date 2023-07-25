@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Add Book</title>
+</head>
+<body>
+    <h1>Add a New Book</h1>
+    <form method="post" action="{{ url_for('add_book') }}">
+        <label>Title:</label>
+        <input type="text" name="title" required>
+        <br>
+        <label>Author:</label>
+        <input type="text" name="author" required>
+        <br>
+        <label>Stock:</label>
+        <input type="number" name="stock" min="0" required>
+        <br>
+        <button type="submit">Add Book</button>
+    </form>
+</body>
+</html>

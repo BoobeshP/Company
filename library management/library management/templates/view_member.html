@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Member Details</title>
+</head>
+<body>
+    <h1>Member Details</h1>
+    <form method="post" action="{{ url_for('view_member', member_id=member[0]) }}">
+        <label>Name:</label>
+        <input type="text" name="name" value="{{ member[1] }}" readonly>
+        <br>
+        <label>Outstanding Debt:</label>
+        <input type="number" name="outstanding_debt" min="0" step="0.01" value="{{ member[2] }}" required>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="{{ url_for('view_members') }}">Back to Members</a>
+</body>
+</html>
